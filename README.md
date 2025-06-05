@@ -135,9 +135,9 @@ torchrun --nnodes=1 --node_rank=0 --nproc_per_node=1 --master_addr=$YOUR_MASTER_
 | VMamba-T (NeurIPS'24)   | 82.2  | 22M      | 5.6G  | 224x224    | --    |
 | MambaOut-T (CVPR'25)    | 82.7  | 27M      | 4.5G  | 224x224    | --    |
 | MambaVision-T (CVPR'25) | 82.3  | 32M      | 4.4G  | 224x224    | --    |
-| GSPN-T (Ours)           | 83.0  | 30M      | 5.3G  | 224x224    | <a href="https://huggingface.co/whj363636/GSPN/blob/main/tiny.pth"><img src="https://img.shields.io/badge/%F0%9F%A4%97-GSPN-T-yellow"></a> |
-| GSPN-S (Ours)           | 83.8  | 50M      | 9.0G  | 224x224    | <a href="https://huggingface.co/whj363636/GSPN/blob/main/small.pth"><img src="https://img.shields.io/badge/%F0%9F%A4%97-GSPN-S-yellow"></a> |
-| GSPN-B (Ours)           | 84.3  | 89M      | 15.9G | 224x224    | <a href="https://huggingface.co/whj363636/GSPN/blob/main/base.pth"><img src="https://img.shields.io/badge/%F0%9F%A4%97-GSPN-B-yellow"></a> |
+| GSPN-T (Ours)           | 83.0  | 30M      | 5.3G  | 224x224    | <a href="https://huggingface.co/whj363636/GSPN/blob/main/tiny.pth"><img src="https://img.shields.io/badge/%F0%9F%A4%97-GSPN T-yellow"></a> |
+| GSPN-S (Ours)           | 83.8  | 50M      | 9.0G  | 224x224    | <a href="https://huggingface.co/whj363636/GSPN/blob/main/small.pth"><img src="https://img.shields.io/badge/%F0%9F%A4%97-GSPN S-yellow"></a> |
+| GSPN-B (Ours)           | 84.3  | 89M      | 15.9G | 224x224    | <a href="https://huggingface.co/whj363636/GSPN/blob/main/base.pth"><img src="https://img.shields.io/badge/%F0%9F%A4%97-GSPN B-yellow"></a> |
 
 More comprehensive results please refer to the [supplementary](./classification/README.md).
 
