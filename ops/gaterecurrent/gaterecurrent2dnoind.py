@@ -17,7 +17,6 @@ from torch.autograd.function import once_differentiable
 from torch.nn.modules.utils import _pair
 
 from . import gaterecurrent2dnoind_cuda
-from .src_tr.gspn_triton_class import gaterecurrent_triton
 
 class GateRecurrent2dnoindFunction(Function):
 		
@@ -121,8 +120,6 @@ class GateRecurrent2dnoind(nn.Module):
 	def forward(self, X, B, G1, G2, G3):
 		if self.backend == 'pytorch':
 			return gaterecurrent2dnoind_pytorch(X, B, G1, G2, G3)
-		elif self.backend == 'triton':
-			return gaterecurrent_triton(X, B, G1, G2, G3, self.items_each_chunk)
 		else:  # cuda backend
 			return gaterecurrent(X, B, G1, G2, G3, self.items_each_chunk)
 
