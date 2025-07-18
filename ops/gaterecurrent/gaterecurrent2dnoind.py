@@ -114,7 +114,7 @@ class GateRecurrent2dnoind(nn.Module):
 	def __init__(self, items_each_chunk_, backend='cuda'):
 		super(GateRecurrent2dnoind, self).__init__()
 		self.items_each_chunk = items_each_chunk_
-		assert backend in ['cuda', 'triton', 'pytorch'], f"Backend {backend} not supported"
+		assert backend in ['cuda', 'pytorch'], f"Backend {backend} not supported"
 		self.backend = backend
 
 	def forward(self, X, B, G1, G2, G3):
