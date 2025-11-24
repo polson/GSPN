@@ -8,7 +8,7 @@
 
 
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 from pathlib import Path
 import torch
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CppExtension
@@ -44,21 +44,38 @@ def make_cuda_ext(name, module, sources, include_dirs, sources_cuda=[]):
 
 if __name__ == '__main__':
     setup(
-        name='gspn_cuda_extension',
-        description='Generalized Spatial Propagation Network c and cuda modules',
-        author='Hongjun Wang and Sifei Liu',
+        name='gspn',
+        version='0.1.0',
+        description='Generalized Spatial Propagation Network - Parallel Sequence Modeling Framework',
+        long_description=open('README.md').read(),
+        long_description_content_type='text/markdown',
+        author='Hongjun Wang, Sifei Liu',
+        author_email='',
+        url='https://github.com/whj363636/GSPN',
+        license='NVIDIA NC',
+        packages=['gspn', 'ops', 'ops.gaterecurrent'],
+        python_requires='>=3.8',
+        install_requires=[
+            'torch>=1.8.0',
+        ],
         ext_modules=[
             make_cuda_ext(
                 name='gaterecurrent2dnoind_cuda',
                 module='ops.gaterecurrent',
                 sources=['src/gaterecurrent2dnoind_cuda.cpp', 'src/gaterecurrent2dnoind_kernel.cu'],
                 include_dirs=[Path(this_dir) / "ops" / "gaterecurrent"]),
-            # make_cuda_ext(
-            #     name='gaterecurrent2d_cuda',
-            #     module='custom_ops.gaterecurrent',
-            #     sources=['src/gaterecurrent2d_cuda.cpp', 'src/gaterecurrent2d_kernel.cu'],
-            #     include_dirs=[Path(this_dir) / "custom_ops" / "gaterecurrent"]),
         ],
         cmdclass={'build_ext': BuildExtension},
-        zip_safe=False
+        zip_safe=False,
+        classifiers=[
+            'Development Status :: 4 - Beta',
+            'Intended Audience :: Science/Research',
+            'License :: Other/Proprietary License',
+            'Programming Language :: Python :: 3',
+            'Programming Language :: Python :: 3.8',
+            'Programming Language :: Python :: 3.9',
+            'Programming Language :: Python :: 3.10',
+            'Programming Language :: Python :: 3.11',
+            'Topic :: Scientific/Engineering :: Artificial Intelligence',
+        ],
     )

@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "torch"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gspn"
+version = "0.1.0"
+description = "Generalized Spatial Propagation Network - Parallel Sequence Modeling Framework"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "NVIDIA NC License"}
+authors = [
+    {name = "Hongjun Wang"},
+    {name = "Sifei Liu"},
+]
+keywords = ["deep learning", "computer vision", "sequence modeling", "parallel processing", "pytorch"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=1.8.0",
+]
+
+[project.urls]
+Homepage = "https://whj363636.github.io/GSPN/"
+Repository = "https://github.com/whj363636/GSPN"
+Documentation = "https://github.com/whj363636/GSPN"
+"Bug Tracker" = "https://github.com/whj363636/GSPN/issues"
+
+[tool.setuptools.packages.find]
+include = ["gspn*", "ops*"]
